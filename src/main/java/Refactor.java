@@ -19,6 +19,17 @@ public class Refactor {
     }
 
     public static boolean rename(CompilationUnit cu, final Range rangeToRename, final String renameTo) {
+        Node n = cu.setRange(rangeToRename);
+        String s = n.toString();
+        Node newNode = n.clone();
+//        NodeWithSimpleName<Node> sNode = null;
+//        sNode.setName(renameTo);
+        cu.replace(n, newNode);
+
+//        cu.setTokenRange(TokenRange(rangeToRename.begin,rangeToRename.end));
+//        NodeWithRange<Node> temp = new NodeWithRange<Node>();
+//        temp.setRange(rangeToRename);
+//        cu.replace(renameTo,renameTo);
         return true;
     }
 
