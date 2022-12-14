@@ -156,7 +156,7 @@ public class ExtractToVariableTests {
 
     @Test public void testAlreadyAVariable() {
         boolean changed = Refactor.extract(methodAST,
-                new Range(new Position(2,21), new Position(2,47)),
+                new Range(new Position(3,21), new Position(3,47)),
                 "init",
                 new ArrayType(PrimitiveType.intType()));
 
